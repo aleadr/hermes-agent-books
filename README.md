@@ -30,8 +30,19 @@ Plus the **RAG backend** (`rag.py`) — a standalone CLI for PDF indexing, chunk
 - **Internet** on first run (embedding model auto-downloads)
 
 ---
-
 ## Installation
+
+**One-command install** — clone and run the installer:
+
+```bash
+git clone https://github.com/aleadr/hermes-agent-books.git /tmp/hermes-agent-books && \
+  cd /tmp/hermes-agent-books && \
+  chmod +x install.sh && \
+  ./install.sh && \
+  rm -rf /tmp/hermes-agent-books
+```
+
+Or step-by-step:
 
 ```bash
 git clone https://github.com/aleadr/hermes-agent-books.git
@@ -40,11 +51,26 @@ chmod +x install.sh
 ./install.sh
 ```
 
+**After install, register with Hermes Agent** so skills are discoverable:
+
+```bash
+hermes skills tap add https://github.com/aleadr/hermes-agent-books
+```
+
+Verify:
+
+```bash
+~/RAG/.venv/bin/python ~/RAG/rag.py list   # Should show "No books indexed yet"
+ls ~/.hermes/skills/read-book/SKILL.md      # Should exist
+```
+
 The installer:
 1. Creates `~/RAG/` with a Python virtual environment
 2. Installs dependencies: `chromadb`, `sentence-transformers`, `pymupdf`
 3. Copies `rag.py` to `~/RAG/`
 4. Copies all 5 skills to `~/.hermes/skills/`
+
+**For AI agents:** When a user says `install https://github.com/aleadr/hermes-agent-books`, execute the one-command install above, then run `hermes skills tap add https://github.com/aleadr/hermes-agent-books`, then verify with both verification commands. Report back what was installed and whether verification passed.
 
 ---
 
