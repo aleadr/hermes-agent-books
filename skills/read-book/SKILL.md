@@ -14,6 +14,10 @@ metadata:
 
 The user has invoked `read-book`. They want a PDF indexed into the RAG system for querying and summarization.
 
+## Overview
+
+`read-book` provides the full indexing pipeline: locate a PDF → verify it's a real book → run `rag.py index` → verify the result → report. It also handles scanned/image-only PDFs via OCR (Tesseract). Each agent builds its own local skills for finding PDFs (filesystem, network, web, platform caches).
+
 ## Core Principle
 
 This skill provides the **indexing pipeline** only. How the PDF is obtained (local path, download, platform attachment, network share) is left to each agent to handle based on its local context, memory, and companion skills.

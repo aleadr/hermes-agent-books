@@ -4,6 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Hermes Agent](https://img.shields.io/badge/Hermes%20Agent-%3E%3D0.13.0-blue)](https://hermes-agent.nousresearch.com)
+[![Skills](https://img.shields.io/badge/Skills-5-green)]()
 
 ---
 

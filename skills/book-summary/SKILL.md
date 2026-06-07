@@ -14,6 +14,10 @@ metadata:
 
 Gunakan skill ini ketika user meminta membuat ringkasan per-bab dari buku yang sudah di-index di RAG.
 
+## Overview
+
+`book-summary` generates per-chapter summaries in Bahasa Indonesia from RAG-indexed books. It uses a multi-stage pipeline: pre-flight chunk density assessment → TOC extraction via `pdftotext` → batch RAG querying → contamination detection (Notes/Bibliography, cross-section overlap, omnibus final chunk) → automatic fallback to direct PDF extraction when RAG is unreliable. Output is a single `.md` file stored in the agent's output directory. Supports both non-fiction (paragraph summaries) and fiction (characters + setting + plot) modes.
+
 ## Trigger
 
 - "buat summary buku"
