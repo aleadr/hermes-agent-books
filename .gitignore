@@ -1,0 +1,19 @@
+# RAG data
+chroma_db/
+books/
+*.pdf
+
+# Python
+__pycache__/
+.venv/
+*.pyc
+
+# Batch results
+batch_results*.json
+queries-book-*.json
+chapter_map*.json
+extracted_content*.md
+
+# OS
+.DS_Store
+Thumbs.db
